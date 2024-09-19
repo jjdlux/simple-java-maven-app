@@ -26,12 +26,16 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo 'Starting Tests!'
-                sh 'mvn test'
+                dir('simple-java-maven-app') {
+                    echo 'Starting Tests!'
+                    sh 'mvn test'
+                }
             }
             post {
-                always {
-                    junit 'target/surefire-reports/*.xml'
+                dir('simple-java-maven-app') {
+                    always {
+                        junit 'target/surefire-reports/*.xml'
+                    }
                 }
             }
         }
