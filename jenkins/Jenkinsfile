@@ -26,10 +26,8 @@ pipeline {
         }
         stage('Test') {
             steps {
-                dir('simple-java-maven-app') {
-                    echo 'Starting Tests!'
-                    sh 'mvn test'
-                }
+                echo 'Starting Tests!'
+                sh 'mvn test'
             }
             post {
                 always {
