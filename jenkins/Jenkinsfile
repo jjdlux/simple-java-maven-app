@@ -47,7 +47,7 @@ pipeline {
         }
         stage('Complete') {
             steps {
-                echo 'Job Complete!'
+                echo 'Completed sub branch!'
             }
         }
     }
