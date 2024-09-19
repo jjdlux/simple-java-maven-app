@@ -32,10 +32,8 @@ pipeline {
                 }
             }
             post {
-                dir('simple-java-maven-app') {
-                    always {
-                        junit 'target/surefire-reports/*.xml'
-                    }
+                always {
+                    junit 'simple-java-maven-app/target/surefire-reports/*.xml'
                 }
             }
         }
